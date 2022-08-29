@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Coin Bank</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="Login_Text">Email</string>
+    <string name="login_button">SIGN IN</string>
+    <string name="Sign_In_Hint">Already Have</string>
+    <string name="Create_Account">Create Account</string>
+    <string name="first_Name">First Name</string>
+    <string name="Last_Name">Last Name</string>
+    <string name="Signup_button">SIGN UP</string>
+    <string name="Already_Account">Already Have an account?</string>
+    <string name="Sign_In_Here">Sign In Here</string>
+
+</resources>
