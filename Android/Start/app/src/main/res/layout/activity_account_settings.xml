@@ -48,8 +48,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="156dp"
-        android:layout_height="32dp"
+        android:layout_width="147dp"
+        android:layout_height="39dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/roboto_bold"
@@ -63,8 +63,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:layout_width="110dp"
-        android:layout_height="29dp"
+        android:id="@+id/AccountSettingSingOutButton"
+        android:layout_width="100dp"
+        android:layout_height="31dp"
         android:layout_marginTop="84dp"
         android:background="@drawable/custom_buttom_ii"
         android:fontFamily="@font/roboto_bold"

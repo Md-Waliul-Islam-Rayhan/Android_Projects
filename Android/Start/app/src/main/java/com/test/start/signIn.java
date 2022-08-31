@@ -43,14 +43,14 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
 
             newUser = findViewById(R.id.newUser);
             createAccount = findViewById(R.id.createAccount);
-            EmailEditText = findViewById(R.id.EmailEditText);
-            passwordEditText = findViewById(R.id.passwordEditText);
+            EmailEditText = findViewById(R.id.SignInEmailEditText);
+            passwordEditText = findViewById(R.id.SignInPasswordEditText);
             signInButton = findViewById(R.id.signInButton);
             progressBar = findViewById(R.id.progressBar);
 
-            typeface = Typeface.createFromAsset(getAssets(), "fonts/roboto_bold.ttf");
-            newUser.setTypeface(typeface);
-            createAccount.setTypeface(typeface);
+//            typeface = Typeface.createFromAsset(getAssets(), "fonts/roboto_bold.ttf");
+//            newUser.setTypeface(typeface);
+//            createAccount.setTypeface(typeface);
 
 
             signInButton.setOnClickListener(this);

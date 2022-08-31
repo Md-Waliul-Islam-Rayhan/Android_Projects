@@ -33,7 +33,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/EmailEditText"
+        android:id="@+id/SignInEmailEditText"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/EmailImage" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/SignInPasswordEditText"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
