@@ -48,9 +48,9 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
             signInButton = findViewById(R.id.signInButton);
             progressBar = findViewById(R.id.progressBar);
 
-//            typeface = Typeface.createFromAsset(getAssets(), "fonts/roboto_bold.ttf");
-//            newUser.setTypeface(typeface);
-//            createAccount.setTypeface(typeface);
+            typeface = Typeface.createFromAsset(getAssets(), "fonts/roboto_bold.ttf");
+            newUser.setTypeface(typeface);
+            createAccount.setTypeface(typeface);
 
 
             signInButton.setOnClickListener(this);
