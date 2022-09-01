@@ -34,6 +34,9 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("Sign Up User Data");
+
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -51,16 +54,13 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 //        lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
 
         //Save Data in Firebase
-        databaseReference = FirebaseDatabase.getInstance().getReference("Sign Up User Data");
 
         firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
         lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
         passwordEditText = findViewById(R.id.SignUpPasswordEditText);
         EmailEditText = findViewById(R.id.SignUpEmailEditText);
         confirmPasswordEditText = findViewById(R.id.SignUpConfirmPasswordEditText);
-
         signUpButton = findViewById(R.id.SignUpButton);
-
         progressBar = findViewById(R.id.SignUpProgressBar);
 
 
@@ -88,8 +88,12 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
         String lastName = lastNameEditText.getText().toString().trim();
         String email = EmailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
-        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
 
+        String key = databaseReference.push().getKey();
+
+        SignUpUserSaveData data = new SignUpUserSaveData(firstName, lastName, email, password);
+        databaseReference.child(key).setValue(data);
+        Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
 
     }
 
