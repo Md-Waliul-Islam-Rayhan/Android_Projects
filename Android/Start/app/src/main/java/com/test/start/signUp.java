@@ -27,7 +27,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
     private Button signUpButton;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;
-    //DatabaseReference databaseReference;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 //        lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
 
         //Save Data in Firebase
-       // databaseReference = FirebaseDatabase.getInstance().getReference("Sign Up User Data");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Sign Up User Data");
 
         firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
         lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
@@ -76,14 +76,21 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
         if (view.getId() == R.id.SignUpButton) {
 //            Intent intent = new Intent(sign_up.this, sign_in.class);
 //            startActivity(intent);
+            userSaveData();
             userRegister();
         }
+    }
 
-//        if (view.getId() == R.id.signInHereTextView) {
-//            Intent intent = new Intent(sign_up.this, sign_in.class);
-//            startActivity(intent);
-//            finish();
-//        }
+
+    private void userSaveData() {
+
+        String firstName = firstNameEditText.getText().toString().trim();
+        String lastName = lastNameEditText.getText().toString().trim();
+        String email = EmailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
+
+
     }
 
 
@@ -145,7 +152,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
                     progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(signUp.this, signIn.class);
                     startActivity(intent);
-                    //userSaveData();
+
                     Toast.makeText(getApplicationContext(), "Registration is Successful", Toast.LENGTH_LONG).show();
                     finish();
                 } else {
@@ -161,15 +168,5 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
-//    private void userSaveData() {
-//
-//        String firstName = firstNameEditText.getText().toString().trim();
-//        String lastName = lastNameEditText.getText().toString().trim();
-//        String email = EmailEditText.getText().toString().trim();
-//        String password = passwordEditText.getText().toString().trim();
-//        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
-//
-//
-//    }
 
 }
