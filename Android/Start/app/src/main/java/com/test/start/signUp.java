@@ -43,13 +43,14 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 //        alreadyHaveAnAccountTextView = findViewById(R.id.alreadyHaveAnAccountTextView);
 //        signInHereTextView = findViewById(R.id.signInHereTextView);
 
-        firstNameEditText = findViewById(R.id.firstNameEditText);
-        lastNameEditText = findViewById(R.id.lastNameEditText);
-        passwordEditText = findViewById(R.id.SignUpPasswordEditText);
+        firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
+        lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
         EmailEditText = findViewById(R.id.SignUpEmailEditText);
-        confirmPasswordEditText = findViewById(R.id.confirmPasswordEditText);
+        passwordEditText = findViewById(R.id.SignUpPasswordEditText);
 
-        signUpButton = findViewById(R.id.signUpButton);
+        confirmPasswordEditText = findViewById(R.id.SignUpConfirmPasswordEditText);
+
+        signUpButton = findViewById(R.id.SignUpButton);
 
         progressBar = findViewById(R.id.progressBar);
 
@@ -63,7 +64,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.signUpButton) {
+        if (view.getId() == R.id.SignUpButton) {
 //            Intent intent = new Intent(sign_up.this, sign_in.class);
 //            startActivity(intent);
             userRegister();

@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/firstNameEditText"
+        android:id="@+id/SignUpFirstNameEditText"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
@@ -55,7 +55,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/lastNameEditText"
+        android:id="@+id/SignUpLastNameEditText"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
@@ -130,7 +130,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/confirmPasswordEditText"
+        android:id="@+id/SignUpConfirmPasswordEditText"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
@@ -144,12 +144,13 @@
 
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/SignUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:backgroundTint="#1C3879"
         android:text="SIGN UP"
+        android:textColor="@color/offWhiteColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -159,7 +160,7 @@
         tools:ignore="MissingConstraints" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/SignUpProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
