@@ -18,13 +18,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class signUp extends AppCompatActivity implements View.OnClickListener {
 
-   private EditText firstNameEditText, lastNameEditText, EmailEditText, passwordEditText, confirmPasswordEditText;
+    private EditText firstNameEditText, lastNameEditText, EmailEditText, passwordEditText, confirmPasswordEditText;
     private Button signUpButton;
-        private ProgressBar progressBar;
+    private ProgressBar progressBar;
     private FirebaseAuth mAuth;
+    //DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,16 +46,22 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 //        alreadyHaveAnAccountTextView = findViewById(R.id.alreadyHaveAnAccountTextView);
 //        signInHereTextView = findViewById(R.id.signInHereTextView);
 
+
+//        firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
+//        lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
+
+        //Save Data in Firebase
+       // databaseReference = FirebaseDatabase.getInstance().getReference("Sign Up User Data");
+
         firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
         lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
-        EmailEditText = findViewById(R.id.SignUpEmailEditText);
         passwordEditText = findViewById(R.id.SignUpPasswordEditText);
-
+        EmailEditText = findViewById(R.id.SignUpEmailEditText);
         confirmPasswordEditText = findViewById(R.id.SignUpConfirmPasswordEditText);
 
         signUpButton = findViewById(R.id.SignUpButton);
 
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.SignUpProgressBar);
 
 
         signUpButton.setOnClickListener(this);
@@ -76,8 +85,6 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 //            finish();
 //        }
     }
-
-
 
 
     private void userRegister() {
@@ -123,7 +130,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
-        if(!password.equals(confirmPassword)){
+        if (!password.equals(confirmPassword)) {
             confirmPasswordEditText.setError("Password Does not Match");
             confirmPasswordEditText.requestFocus();
             return;
@@ -138,24 +145,31 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
                     progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(signUp.this, signIn.class);
                     startActivity(intent);
+                    //userSaveData();
                     Toast.makeText(getApplicationContext(), "Registration is Successful", Toast.LENGTH_LONG).show();
                     finish();
-                }
-
-                else {
+                } else {
                     progressBar.setVisibility(View.GONE);
-                    if(task.getException() instanceof FirebaseAuthUserCollisionException)
-                    {
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(getApplicationContext(), "User is already Registered", Toast.LENGTH_LONG).show();
 
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "Registration is Unsuccessful. Error: "+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Registration is Unsuccessful. Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
             }
         });
     }
+
+//    private void userSaveData() {
+//
+//        String firstName = firstNameEditText.getText().toString().trim();
+//        String lastName = lastNameEditText.getText().toString().trim();
+//        String email = EmailEditText.getText().toString().trim();
+//        String password = passwordEditText.getText().toString().trim();
+//        String confirmPassword = confirmPasswordEditText.getText().toString().trim();
+//
+//
+//    }
 
 }
