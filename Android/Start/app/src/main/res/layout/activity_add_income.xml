@@ -17,6 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Spinner
+        android:layout_width="290dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/incomeSelectCategoryImageView"
+        app:layout_constraintEnd_toEndOf="@+id/incomeSelectCategoryImageView"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/incomeSelectCategoryImageView"
+        app:layout_constraintTop_toTopOf="@+id/incomeSelectCategoryImageView">
+
+
+    </Spinner>
+
     <ImageView
         android:id="@+id/incomeAmountImageView"
         android:layout_width="313dp"
