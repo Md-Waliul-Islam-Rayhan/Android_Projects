@@ -34,7 +34,8 @@ public class addIncome extends AppCompatActivity {
         addIncomeButton = findViewById(R.id.addIncomeButton);
         spinner = findViewById(R.id.AddIncomeSpinner);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample)
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,IncomeSpinner);
+        spinner.setAdapter(adapter);
 
 
 
