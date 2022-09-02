@@ -19,11 +19,12 @@
 
 
     <Spinner
-        android:layout_width="290dp"
+        android:id="@+id/AddIncomeSpinner"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/incomeSelectCategoryImageView"
         app:layout_constraintEnd_toEndOf="@+id/incomeSelectCategoryImageView"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/incomeSelectCategoryImageView"
         app:layout_constraintTop_toTopOf="@+id/incomeSelectCategoryImageView">
 

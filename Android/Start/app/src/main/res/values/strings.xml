@@ -3,4 +3,8 @@
     <string name="Coinbank_Wallet">Coinbank Wallet</string>
     <string name="privacy">Privacy &amp; Security</string>
 
+    <string-array name="Add_Income_Items">
+        <item></item>
+    </string-array>
+
 </resources>
