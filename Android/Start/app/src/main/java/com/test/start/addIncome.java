@@ -9,18 +9,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class addIncome extends AppCompatActivity {
     String[] IncomeSpinner;
     private Button addIncomeButton;
+    private EditText amount, comment;
     Spinner spinner;
+    private FirebaseAuth mAuth;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_income);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Add Income User Data");
+        mAuth = FirebaseAuth.getInstance();
+
 
         IncomeSpinner = getResources().getStringArray(R.array.Add_Income_Items);
 
@@ -34,6 +46,8 @@ public class addIncome extends AppCompatActivity {
 
         addIncomeButton = findViewById(R.id.addIncomeButton);
         spinner = findViewById(R.id.AddIncomeSpinner);
+        amount = findViewById(R.id.amountTakaEditText);
+        comment = findViewById(R.id.commentEditText);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,IncomeSpinner);
         spinner.setAdapter(adapter);
@@ -63,7 +77,15 @@ public class addIncome extends AppCompatActivity {
     private void addIncomeFunction() {
 
         String value = spinner.getSelectedItem().toString();
-        Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
+        String am = amount.getText().toString().trim();
+        String cmnt = comment.getText().toString().trim();
+        //Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
+
+        String key = databaseReference.push().getKey();
+
+        AddUserDetails data = new AddUserDetails(value, am, cmnt);
+        databaseReference.child(key).setValue(data);
+        Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
 
     }
 }

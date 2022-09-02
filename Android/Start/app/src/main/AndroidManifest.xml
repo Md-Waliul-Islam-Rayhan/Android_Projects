@@ -56,13 +56,13 @@
             android:name=".signUp"
             android:exported="false" />
         <activity
-            android:name=".homePage"
+            android:name=".Spalash_Screen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Spalash_Screen"
+            android:name=".homePage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

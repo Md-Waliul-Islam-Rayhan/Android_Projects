@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/expenseSelectCategoryImageView" />
 
     <EditText
-        android:id="@+id/amountTakaEditText"
+        android:id="@+id/ExpanseAmountTakaEditText"
         android:layout_width="272dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/expenseAmountImageView" />
 
     <EditText
-        android:id="@+id/commentEditText"
+        android:id="@+id/ExpanseCommentEditText"
         android:layout_width="272dp"
         android:layout_height="48dp"
         android:background="@android:color/transparent"
