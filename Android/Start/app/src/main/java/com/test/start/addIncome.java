@@ -6,13 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.Spinner;
 
 public class addIncome extends AppCompatActivity {
+    String[] IncomeSpinner;
+    private Button addIncomeButton;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_income);
+
+        IncomeSpinner = getResources().getStringArray(R.array.Add_Income_Items);
 
         getSupportActionBar().setTitle("Add Income");
         //Notification Color
@@ -21,6 +28,11 @@ public class addIncome extends AppCompatActivity {
         //This is for Back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+        addIncomeButton = findViewById(R.id.addIncomeButton);
+        spinner = findViewById(R.id.AddIncomeSpinner);
+
 
 
     }
