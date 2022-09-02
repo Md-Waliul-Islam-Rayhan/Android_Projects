@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -32,6 +33,8 @@ public class addIncome extends AppCompatActivity {
 
         addIncomeButton = findViewById(R.id.addIncomeButton);
         spinner = findViewById(R.id.AddIncomeSpinner);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample)
 
 
 
