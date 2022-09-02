@@ -11,4 +11,13 @@
         <item>Others</item>
     </string-array>
 
+
+    <string-array name="Add_Expanse_Items">
+        <item>Salary</item>
+        <item>Savings</item>
+        <item>Deposit</item>
+        <item>Food</item>
+        <item>Others</item>
+    </string-array>
+
 </resources>

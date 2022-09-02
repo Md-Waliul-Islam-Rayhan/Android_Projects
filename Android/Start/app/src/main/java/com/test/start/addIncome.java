@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class addIncome extends AppCompatActivity {
     String[] IncomeSpinner;
@@ -30,12 +32,18 @@ public class addIncome extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-
         addIncomeButton = findViewById(R.id.addIncomeButton);
         spinner = findViewById(R.id.AddIncomeSpinner);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,IncomeSpinner);
         spinner.setAdapter(adapter);
+
+        addIncomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addIncomeFunction();
+            }
+        });
 
 
 
@@ -49,5 +57,13 @@ public class addIncome extends AppCompatActivity {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void addIncomeFunction() {
+
+        String value = spinner.getSelectedItem().toString();
+        Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
+
     }
 }

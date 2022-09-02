@@ -17,6 +17,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+    <Spinner
+        android:id="@+id/AddExpanseSpinner"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/expenseSelectCategoryImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/expenseSelectCategoryImageView"
+        app:layout_constraintTop_toTopOf="@+id/expenseSelectCategoryImageView">
+
+
+    </Spinner>
+
     <ImageView
         android:id="@+id/expenseAmountImageView"
         android:layout_width="313dp"
@@ -33,6 +47,7 @@
         android:layout_height="48dp"
         android:background="@android:color/transparent"
         android:hint="Amount (in Taka)"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/expenseAmountImageView"
         app:layout_constraintEnd_toEndOf="@+id/expenseAmountImageView"
         app:layout_constraintHorizontal_bias="0.4"
