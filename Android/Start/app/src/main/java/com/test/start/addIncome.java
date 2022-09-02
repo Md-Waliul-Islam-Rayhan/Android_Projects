@@ -18,20 +18,20 @@ public class addIncome extends AppCompatActivity {
         //Notification Color
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 
+        //This is for Back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
     }
 
+    //This is for Back Button
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if(item.getItemId()==android.R.id.home)
         {
             this.finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

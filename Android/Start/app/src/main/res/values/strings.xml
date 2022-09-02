@@ -4,7 +4,11 @@
     <string name="privacy">Privacy &amp; Security</string>
 
     <string-array name="Add_Income_Items">
-        <item></item>
+        <item>Salary</item>
+        <item>Savings</item>
+        <item>Deposit</item>
+        <item>Food</item>
+        <item>Others</item>
     </string-array>
 
 </resources>
