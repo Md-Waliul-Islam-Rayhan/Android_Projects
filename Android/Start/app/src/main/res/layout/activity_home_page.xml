@@ -123,7 +123,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/expanseImage"
         android:layout_width="350dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
@@ -143,10 +143,10 @@
         android:text="Expense"
         android:textColor="@color/offWhiteColor"
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/expanseImage"
+        app:layout_constraintEnd_toEndOf="@+id/expanseImage"
+        app:layout_constraintStart_toStartOf="@+id/expanseImage"
+        app:layout_constraintTop_toTopOf="@+id/expanseImage"
         app:layout_constraintVertical_bias="0.209"
         tools:ignore="MissingConstraints" />
 
@@ -156,10 +156,10 @@
         android:layout_height="34dp"
         android:layout_marginTop="12dp"
         android:src="@drawable/ic_takaicon"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/expanseImage"
+        app:layout_constraintEnd_toEndOf="@+id/expanseImage"
         app:layout_constraintHorizontal_bias="0.369"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/expanseImage"
         app:layout_constraintTop_toBottomOf="@+id/expenseImageId"
         app:layout_constraintVertical_bias="0.024" />
 
@@ -171,11 +171,11 @@
         android:text="200.47"
         android:textSize="25dp"
         android:textColor="@color/offWhiteColor"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/expanseImage"
+        app:layout_constraintEnd_toEndOf="@+id/expanseImage"
         app:layout_constraintHorizontal_bias="0.556"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/expanseImage"
+        app:layout_constraintTop_toTopOf="@+id/expanseImage"
         app:layout_constraintVertical_bias="0.655" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

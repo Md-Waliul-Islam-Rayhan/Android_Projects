@@ -17,19 +17,20 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailsAddIncome extends AppCompatActivity {
+public class ExpanseHistory extends AppCompatActivity {
 
-    private ListView listView;
-    DatabaseReference databaseReference;
-    private List<AddUserDetails> IncomeDataList;
-    private Custom_Adapter custom_adapter;
+    private ListView listView2;
+    DatabaseReference databaseReference2;
+    private List<AddUserDetails> ExpanseDataList;
+    private ExpanseHistoryCustomAdapter ExpanseHistoryCustom_adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details_add_income);
+        setContentView(R.layout.activity_expanse_history);
 
-        getSupportActionBar().setTitle("Cash History");
+
+        getSupportActionBar().setTitle("Expanse History");
         //Notification Color
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 
@@ -38,16 +39,13 @@ public class DetailsAddIncome extends AppCompatActivity {
 
 
 
-        listView = findViewById(R.id.DetailsAddIncomeListView);
+        listView2 = findViewById(R.id.DetailsHistoryListView2);
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Add Income User Data");
-        IncomeDataList = new ArrayList<>();
-        custom_adapter = new Custom_Adapter(DetailsAddIncome.this,IncomeDataList);
-
-
+        databaseReference2 = FirebaseDatabase.getInstance().getReference("Add Expanse User Data");
+        ExpanseDataList = new ArrayList<>();
+        ExpanseHistoryCustom_adapter = new ExpanseHistoryCustomAdapter(ExpanseHistory.this, ExpanseDataList);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -59,30 +57,27 @@ public class DetailsAddIncome extends AppCompatActivity {
     }
 
 
+
+
     @Override
     protected void onStart() {
-
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                IncomeDataList.clear();
+                ExpanseDataList.clear();
                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
-
                     AddUserDetails UserData = dataSnapshot1.getValue(AddUserDetails.class);
-                    IncomeDataList.add(UserData);
-
+                    ExpanseDataList.add(UserData);
                 }
-
-                listView.setAdapter(custom_adapter);
+                listView2.setAdapter(ExpanseHistoryCustom_adapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
         super.onStart();
     }
+
 }

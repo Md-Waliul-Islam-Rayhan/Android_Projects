@@ -48,7 +48,7 @@ public class addExpanse extends AppCompatActivity {
         ExpanseAmount = findViewById(R.id.ExpanseAmountTakaEditText);
         ExpanseComment = findViewById(R.id.ExpanseCommentEditText);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,ExpanseSpinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.sample_view, R.id.TextViewSample, ExpanseSpinner);
         spinner.setAdapter(adapter);
 
         addExpanseButton.setOnClickListener(new View.OnClickListener() {
@@ -62,8 +62,7 @@ public class addExpanse extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==android.R.id.home)
-        {
+        if (item.getItemId() == android.R.id.home) {
             this.finish();
         }
         return super.onOptionsItemSelected(item);
@@ -83,5 +82,8 @@ public class addExpanse extends AppCompatActivity {
         databaseReference.child(key).setValue(data);
         Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
 
+
+        ExpanseAmount.setText("");
+        ExpanseComment.setText("");
     }
 }

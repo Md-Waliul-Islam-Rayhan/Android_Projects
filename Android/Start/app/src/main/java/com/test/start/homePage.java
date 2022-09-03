@@ -1,13 +1,11 @@
 package com.test.start;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.service.controls.actions.FloatAction;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,7 +13,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,7 +21,7 @@ public class homePage extends AppCompatActivity {
     //For Floating Action Button
     FloatingActionButton add, income, expanse;
     Animation fabOpen, fabClose, rotateForword, rotateBackword;
-    ImageView cashImg;
+    ImageView cashImg, expanseImg;
     boolean isOpen = false;
 
     @Override
@@ -41,13 +38,22 @@ public class homePage extends AppCompatActivity {
         income = findViewById(R.id.addIncomeFloatingActionButton);
         expanse = findViewById(R.id.addExpanseFloatingActionButton);
         cashImg = findViewById(R.id.cashImage);
+        expanseImg = findViewById(R.id.expanseImage);
 
         cashImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(homePage.this, DetailsAddIncome.class);
+                Intent intent = new Intent(homePage.this, CashHistory.class);
                 startActivity(intent);
 
+            }
+        });
+
+        expanseImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homePage.this, ExpanseHistory.class);
+                startActivity(intent);
             }
         });
 

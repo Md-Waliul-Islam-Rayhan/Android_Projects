@@ -14,7 +14,10 @@
         android:theme="@style/Theme.Start"
         tools:targetApi="31">
         <activity
-            android:name=".DetailsAddIncome"
+            android:name=".ExpanseHistory"
+            android:exported="false" />
+        <activity
+            android:name=".CashHistory"
             android:exported="false" />
         <activity
             android:name=".Spalash_Screen3"
