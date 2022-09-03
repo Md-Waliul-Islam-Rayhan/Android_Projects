@@ -44,12 +44,17 @@
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_account_settings.xml" value="0.33" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_add_expanse.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_add_income.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_details_add_income.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_feedback_menu_bar.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_help_menu_bar.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_home_page.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_sign_in.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_sign_up.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_spalash_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_spalash_screen2.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_spalash_screen3.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_test_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/history_sample_view.xml" value="0.34395848776871757" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/sample_view.xml" value="0.365625" />
       </map>
     </option>

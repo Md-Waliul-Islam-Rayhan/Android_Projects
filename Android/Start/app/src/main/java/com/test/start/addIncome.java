@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class addIncome extends AppCompatActivity {
     String[] IncomeSpinner;
     private Button addIncomeButton;
-    private EditText amount, comment;
+    private EditText IncomeAmount, IncomeComment;
     Spinner spinner;
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
@@ -46,8 +46,8 @@ public class addIncome extends AppCompatActivity {
 
         addIncomeButton = findViewById(R.id.addIncomeButton);
         spinner = findViewById(R.id.AddIncomeSpinner);
-        amount = findViewById(R.id.amountTakaEditText);
-        comment = findViewById(R.id.commentEditText);
+        IncomeAmount = findViewById(R.id.amountTakaEditText);
+        IncomeComment = findViewById(R.id.commentEditText);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,IncomeSpinner);
         spinner.setAdapter(adapter);
@@ -76,16 +76,20 @@ public class addIncome extends AppCompatActivity {
 
     private void addIncomeFunction() {
 
-        String value = spinner.getSelectedItem().toString();
-        String am = amount.getText().toString().trim();
-        String cmnt = comment.getText().toString().trim();
+        String Income_Type = spinner.getSelectedItem().toString();
+        String Income_Amount = IncomeAmount.getText().toString().trim();
+        String Income_Comment = IncomeComment.getText().toString().trim();
         //Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
 
         String key = databaseReference.push().getKey();
 
-        AddUserDetails data = new AddUserDetails(value, am, cmnt);
+        AddUserDetails data = new AddUserDetails(Income_Type, Income_Amount, Income_Comment);
         databaseReference.child(key).setValue(data);
         Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
+
+
+        IncomeAmount.setText("");
+        IncomeComment.setText("");
 
     }
 }

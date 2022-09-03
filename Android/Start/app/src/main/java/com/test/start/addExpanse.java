@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class addExpanse extends AppCompatActivity {
     String[] ExpanseSpinner;
     private Button addExpanseButton;
-    private EditText amount, comment;
+    private EditText ExpanseAmount, ExpanseComment;
     Spinner spinner;
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
@@ -45,8 +45,8 @@ public class addExpanse extends AppCompatActivity {
 
         addExpanseButton = findViewById(R.id.addExpeseButton);
         spinner = findViewById(R.id.AddExpanseSpinner);
-        amount = findViewById(R.id.ExpanseAmountTakaEditText);
-        comment = findViewById(R.id.ExpanseCommentEditText);
+        ExpanseAmount = findViewById(R.id.ExpanseAmountTakaEditText);
+        ExpanseComment = findViewById(R.id.ExpanseCommentEditText);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,ExpanseSpinner);
         spinner.setAdapter(adapter);
@@ -71,15 +71,15 @@ public class addExpanse extends AppCompatActivity {
 
     private void addExpanseFunction() {
 
-        String value = spinner.getSelectedItem().toString();
-        String am = amount.getText().toString().trim();
-        String cmnt = comment.getText().toString().trim();
+        String Expanse_Value = spinner.getSelectedItem().toString();
+        String Expanse_Amount = ExpanseAmount.getText().toString().trim();
+        String Expanse_Comment = ExpanseComment.getText().toString().trim();
         //Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
 
 
         String key = databaseReference.push().getKey();
 
-        AddUserDetails data = new AddUserDetails(value, am, cmnt);
+        AddUserDetails data = new AddUserDetails(Expanse_Value, Expanse_Amount, Expanse_Comment);
         databaseReference.child(key).setValue(data);
         Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
 

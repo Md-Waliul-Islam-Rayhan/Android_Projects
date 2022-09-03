@@ -43,17 +43,6 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //this.setTitle("Sign Up Activity");
-
-//        createAccountTextView = findViewById(R.id.createAccountTextView);
-//        alreadyHaveAnAccountTextView = findViewById(R.id.alreadyHaveAnAccountTextView);
-//        signInHereTextView = findViewById(R.id.signInHereTextView);
-
-
-//        firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
-//        lastNameEditText = findViewById(R.id.SignUpLastNameEditText);
-
-        //Save Data in Firebase
 
         firstNameEditText = findViewById(R.id.SignUpFirstNameEditText);
         lastNameEditText = findViewById(R.id.SignUpLastNameEditText);

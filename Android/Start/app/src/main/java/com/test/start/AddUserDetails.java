@@ -2,35 +2,40 @@ package com.test.start;
 
 public class AddUserDetails {
 
-    String value, am, cmnt;
+    String Type, Amount, Comment;
 
-    public AddUserDetails(String value, String am, String cmnt) {
-        this.value = value;
-        this.am = am;
-        this.cmnt = cmnt;
+    public AddUserDetails()
+    {
+
     }
 
-    public String getValue() {
-        return value;
+    public AddUserDetails(String Type, String Amount, String Comment) {
+        this.Type = Type;
+        this.Amount = Amount;
+        this.Comment = Comment;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public String getType() {
+        return Type;
     }
 
-    public String getAm() {
-        return am;
+    public void setType(String Type) {
+        this.Type = Type;
     }
 
-    public void setAm(String am) {
-        this.am = am;
+    public String getAmount() {
+        return Amount;
     }
 
-    public String getCmnt() {
-        return cmnt;
+    public void setAmount(String Amount) {
+        this.Amount = Amount;
     }
 
-    public void setCmnt(String cmnt) {
-        this.cmnt = cmnt;
+    public String getComment() {
+        return Comment;
+    }
+
+    public void setComment(String Comment) {
+        this.Comment = Comment;
     }
 }

@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -23,6 +24,7 @@ public class homePage extends AppCompatActivity {
     //For Floating Action Button
     FloatingActionButton add, income, expanse;
     Animation fabOpen, fabClose, rotateForword, rotateBackword;
+    ImageView cashImg;
     boolean isOpen = false;
 
     @Override
@@ -38,6 +40,16 @@ public class homePage extends AppCompatActivity {
         add = findViewById(R.id.addFloatingActionButton);
         income = findViewById(R.id.addIncomeFloatingActionButton);
         expanse = findViewById(R.id.addExpanseFloatingActionButton);
+        cashImg = findViewById(R.id.cashImage);
+
+        cashImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homePage.this, DetailsAddIncome.class);
+                startActivity(intent);
+
+            }
+        });
 
         //Animation
         fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
