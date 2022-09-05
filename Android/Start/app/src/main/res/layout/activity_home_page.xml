@@ -52,15 +52,15 @@
 
     <TextView
         android:id="@+id/cashValue"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_regular"
-        android:text="576.87"
-        android:textSize="25dp"
+        android:text="00.00"
         android:textColor="@color/offWhiteColor"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/cashImage"
         app:layout_constraintEnd_toEndOf="@+id/cashImage"
-        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toStartOf="@+id/cashImage"
         app:layout_constraintTop_toTopOf="@+id/cashImage"
         app:layout_constraintVertical_bias="0.655" />
@@ -169,15 +169,15 @@
 
     <TextView
         android:id="@+id/expenseValue"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_regular"
         android:text="200.47"
-        android:textSize="25dp"
         android:textColor="@color/offWhiteColor"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/expanseImage"
         app:layout_constraintEnd_toEndOf="@+id/expanseImage"
-        app:layout_constraintHorizontal_bias="0.556"
+        app:layout_constraintHorizontal_bias="0.69"
         app:layout_constraintStart_toStartOf="@+id/expanseImage"
         app:layout_constraintTop_toTopOf="@+id/expanseImage"
         app:layout_constraintVertical_bias="0.655" />

@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".HelpMenuBar">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Help Menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="এই এপস টা হচ্ছে কয়েন ব্যাংক ওয়ালেট। \nএখানে আপনি আপনার প্রতিদিনের যাবতীয় খরচ ও ব্যয় এর হিসেব রাখতে পারবেন।"
+        android:textSize="20dp"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="153dp"
         tools:ignore="MissingConstraints" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

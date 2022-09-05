@@ -62,6 +62,7 @@
             android:src="@drawable/ic_notification" />
 
         <TextView
+            android:id="@+id/SettingNotification"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -104,6 +105,7 @@
             android:src="@drawable/ic_lock" />
 
         <TextView
+            android:id="@+id/SettingsPrivacy"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -144,6 +146,7 @@
             android:src="@drawable/ic_info" />
 
         <TextView
+            android:id="@+id/SettingsAbout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"

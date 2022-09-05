@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class settings extends AppCompatActivity {
-    private TextView account;
-    String Fname, Lname;
+    private TextView account, noti, privacy, about;
+    String Fname, Lname, Mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +29,16 @@ public class settings extends AppCompatActivity {
 
 
         account = findViewById(R.id.accountID);
+        noti = findViewById(R.id.SettingNotification);
+        privacy = findViewById(R.id.SettingsPrivacy);
+        about = findViewById(R.id.SettingsAbout);
 
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null) {
             Fname = bundle.getString("Fname");
             Lname = bundle.getString("Lname");
+            Mail = bundle.getString("mail");
         }
 
         account.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +48,16 @@ public class settings extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString("Fname", Fname);
                 bundle.putString("Lname", Lname);
+                bundle.putString("mail", Mail);
                 intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(settings.this, settings_about.class);
                 startActivity(intent);
             }
         });

@@ -23,11 +23,11 @@ public class error extends AppCompatActivity {
         actionBar.hide();
 
 
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
+        //getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 
 
 
-        backHome = findViewById(R.id.backHomeButton);
+        /*backHome = findViewById(R.id.backHomeButton);
 
         backHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +35,6 @@ public class error extends AppCompatActivity {
                 Intent intent = new Intent(error.this, homePage.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 }

@@ -24,8 +24,12 @@ public class homePage extends AppCompatActivity {
     Animation fabOpen, fabClose, rotateForword, rotateBackword;
     ImageView cashImg, expanseImg;
     boolean isOpen = false;
-    String Fname, Lname;
-    TextView savings, sngImg;
+    String Fname;
+    String Lname;
+    String Mail;
+    String AddIncome;
+    int adIncome;
+    TextView savings, sngImg, cashValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +48,24 @@ public class homePage extends AppCompatActivity {
         expanseImg = findViewById(R.id.expanseImage);
         savings = findViewById(R.id.savingsValue);
         sngImg = findViewById(R.id.savingsImageId);
+        cashValue = findViewById(R.id.cashValue);
 
 
         Bundle bundle = getIntent().getExtras();
-
-        if (bundle!=null) {
+        if (bundle != null) {
             Fname = bundle.getString("Fname");
             Lname = bundle.getString("Lname");
+            Mail = bundle.getString("mail");
+
         }
+
+        Bundle bundle2 = getIntent().getExtras();
+        if (bundle2 != null) {
+            AddIncome = bundle2.getString("IncomeAmount");
+        }
+
+
+        cashValue.setText(AddIncome);
 
         cashImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,16 +118,14 @@ public class homePage extends AppCompatActivity {
     }
 
     private void animateFab() {
-        if(isOpen){
+        if (isOpen) {
             add.startAnimation(rotateForword);
             income.startAnimation(fabClose);
             expanse.startAnimation(fabClose);
             income.setClickable(false);
             expanse.setClickable(false);
             isOpen = false;
-        }
-
-        else{
+        } else {
             add.startAnimation(rotateBackword);
             income.startAnimation(fabOpen);
             expanse.startAnimation(fabOpen);
@@ -133,37 +145,33 @@ public class homePage extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if(item.getItemId()==R.id.SettingsMenu)
-        {
+        if (item.getItemId() == R.id.SettingsMenu) {
             Intent intent = new Intent(homePage.this, settings.class);
             Bundle bundle = new Bundle();
             bundle.putString("Fname", Fname);
             bundle.putString("Lname", Lname);
+            bundle.putString("mail", Mail);
             intent.putExtras(bundle);
             startActivity(intent);
         }
 
-        if(item.getItemId()==R.id.ShareMenu)
-        {
+        if (item.getItemId() == R.id.ShareMenu) {
             Intent intent = new Intent(homePage.this, error.class);
             startActivity(intent);
         }
 
-        if(item.getItemId()==R.id.RateUsMenu)
-        {
+        if (item.getItemId() == R.id.RateUsMenu) {
             Intent intent = new Intent(homePage.this, error.class);
             startActivity(intent);
         }
 
-        if(item.getItemId()==R.id.FeedbackMenu)
-        {
-            Intent intent = new Intent(homePage.this, error.class);
+        if (item.getItemId() == R.id.FeedbackMenu) {
+            Intent intent = new Intent(homePage.this, FeedbackMenuBar.class);
             startActivity(intent);
         }
 
-        if(item.getItemId()==R.id.HelpMenu)
-        {
-            Intent intent = new Intent(homePage.this, error.class);
+        if (item.getItemId() == R.id.HelpMenu) {
+            Intent intent = new Intent(homePage.this, HelpMenuBar.class);
             startActivity(intent);
         }
 

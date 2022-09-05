@@ -24,7 +24,7 @@ public class accountSettings extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     private Button SOButton;
-    String Fname, LName, FullName;
+    String Fname, LName, FullName, Mail;
     TextView name, mail;
 
     @Override
@@ -39,10 +39,12 @@ public class accountSettings extends AppCompatActivity {
         if (bundle!=null){
             Fname = bundle.getString("Fname");
             LName = bundle.getString("Lname");
+            Mail = bundle.getString("mail");
 
             FullName = Fname+" "+LName;
 
             name.setText(FullName);
+            mail.setText(Mail);
         }
 
 

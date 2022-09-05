@@ -28,7 +28,7 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar progressBar;
     private Button signInButton;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    String Fname, Lname;
+    String Fname, Lname, Mail;
 
 
     @Override
@@ -54,6 +54,7 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
             if (bundle!=null) {
                 Fname = bundle.getString("Fname");
                 Lname = bundle.getString("Lname");
+                Mail = bundle.getString("mail");
             }
 
 
@@ -116,6 +117,7 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
                     Bundle bundle = new Bundle();
                     bundle.putString("Fname", Fname);
                     bundle.putString("Lname", Lname);
+                    bundle.putString("mail", email);
                     progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(signIn.this, homePage.class);
                     intent.putExtras(bundle);
