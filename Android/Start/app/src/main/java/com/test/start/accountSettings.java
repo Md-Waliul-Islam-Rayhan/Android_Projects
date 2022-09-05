@@ -9,39 +9,41 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class accountSettings extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     private Button SOButton;
-
-    /*TextView name, mail;
-    String fullName="firstName", firstName;*/
+    String Fname, LName, FullName;
+    TextView name, mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_settings);
 
-        /*name = findViewById(R.id.AccountNameTextView);
+        name = findViewById(R.id.AccountNameTextView);
         mail = findViewById(R.id.AccountEmailIdTextView);
 
-
         Bundle bundle = getIntent().getExtras();
-
         if (bundle!=null){
-            firstName = bundle.getString("key");
-            //String lastName = bundle.getString("lastnameKey");
+            Fname = bundle.getString("Fname");
+            LName = bundle.getString("Lname");
 
-            //fullName = firstName+" "+lastName;
+            FullName = Fname+" "+LName;
+
+            name.setText(FullName);
         }
-
-        name.setText(firstName);*/
-
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -63,19 +65,17 @@ public class accountSettings extends AppCompatActivity {
                 Intent intent = new Intent(accountSettings.this, signIn.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Sign out is Successful", Toast.LENGTH_LONG).show();
-                //finish();
             }
         });
+
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if(item.getItemId()==android.R.id.home)
         {
             this.finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

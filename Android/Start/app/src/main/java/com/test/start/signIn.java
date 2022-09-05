@@ -28,6 +28,7 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar progressBar;
     private Button signInButton;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    String Fname, Lname;
 
 
     @Override
@@ -48,9 +49,12 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
             signInButton = findViewById(R.id.signInButton);
             progressBar = findViewById(R.id.progressBar);
 
-//            typeface = Typeface.createFromAsset(getAssets(), "fonts/roboto_bold.ttf");
-//            newUser.setTypeface(typeface);
-//            createAccount.setTypeface(typeface);
+
+            Bundle bundle = getIntent().getExtras();
+            if (bundle!=null) {
+                Fname = bundle.getString("Fname");
+                Lname = bundle.getString("Lname");
+            }
 
 
             signInButton.setOnClickListener(this);
@@ -66,8 +70,6 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.signInButton) {
-//            Intent intent = new Intent(sign_in.this, MainActivity.class);
-//            startActivity(intent);
             userSignIn();
         }
         if (view.getId() == R.id.createAccount) {
@@ -111,8 +113,12 @@ public class signIn extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Fname", Fname);
+                    bundle.putString("Lname", Lname);
                     progressBar.setVisibility(View.GONE);
                     Intent intent = new Intent(signIn.this, homePage.class);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Login is Successful", Toast.LENGTH_LONG).show();
                     finish();

@@ -36,7 +36,6 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Sign Up User Data");
 
-
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -63,8 +62,6 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.SignUpButton) {
-//            Intent intent = new Intent(sign_up.this, sign_in.class);
-//            startActivity(intent);
             userSaveData();
             userRegister();
         }
@@ -143,7 +140,14 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     progressBar.setVisibility(View.GONE);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Fname", firstName);
+                    bundle.putString("Lname", lastName);
+
+
                     Intent intent = new Intent(signUp.this, signIn.class);
+                    intent.putExtras(bundle);
                     startActivity(intent);
 
                     Toast.makeText(getApplicationContext(), "Registration is Successful", Toast.LENGTH_LONG).show();

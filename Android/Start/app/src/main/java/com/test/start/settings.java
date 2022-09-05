@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class settings extends AppCompatActivity {
     private TextView account;
+    String Fname, Lname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +24,27 @@ public class settings extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
         account = findViewById(R.id.accountID);
 
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle!=null) {
+            Fname = bundle.getString("Fname");
+            Lname = bundle.getString("Lname");
+        }
+
         account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(settings.this, accountSettings.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Fname", Fname);
+                bundle.putString("Lname", Lname);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
@@ -43,12 +54,10 @@ public class settings extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         if(item.getItemId()==android.R.id.home)
         {
             this.finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

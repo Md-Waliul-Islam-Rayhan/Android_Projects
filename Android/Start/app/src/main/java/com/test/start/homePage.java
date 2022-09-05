@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -23,6 +24,8 @@ public class homePage extends AppCompatActivity {
     Animation fabOpen, fabClose, rotateForword, rotateBackword;
     ImageView cashImg, expanseImg;
     boolean isOpen = false;
+    String Fname, Lname;
+    TextView savings, sngImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,16 @@ public class homePage extends AppCompatActivity {
         expanse = findViewById(R.id.addExpanseFloatingActionButton);
         cashImg = findViewById(R.id.cashImage);
         expanseImg = findViewById(R.id.expanseImage);
+        savings = findViewById(R.id.savingsValue);
+        sngImg = findViewById(R.id.savingsImageId);
+
+
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle!=null) {
+            Fname = bundle.getString("Fname");
+            Lname = bundle.getString("Lname");
+        }
 
         cashImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,9 +125,7 @@ public class homePage extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater menuInflater = getMenuInflater();
-
         menuInflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -124,35 +135,34 @@ public class homePage extends AppCompatActivity {
 
         if(item.getItemId()==R.id.SettingsMenu)
         {
-            //Toast.makeText(getApplicationContext(), "Login is Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(homePage.this, settings.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("Fname", Fname);
+            bundle.putString("Lname", Lname);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
 
         if(item.getItemId()==R.id.ShareMenu)
         {
-            //Toast.makeText(getApplicationContext(), "Login is Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(homePage.this, error.class);
             startActivity(intent);
         }
 
         if(item.getItemId()==R.id.RateUsMenu)
         {
-            //Toast.makeText(getApplicationContext(), "Login is Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(homePage.this, error.class);
             startActivity(intent);
         }
 
         if(item.getItemId()==R.id.FeedbackMenu)
         {
-            //Toast.makeText(getApplicationContext(), "Login is Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(homePage.this, error.class);
             startActivity(intent);
         }
 
         if(item.getItemId()==R.id.HelpMenu)
         {
-            //Toast.makeText(getApplicationContext(), "Login is Successful", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(homePage.this, error.class);
             startActivity(intent);
         }

@@ -3,6 +3,7 @@ package com.test.start;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ public class addIncome extends AppCompatActivity {
     Spinner spinner;
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
+    //float income=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,19 @@ public class addIncome extends AppCompatActivity {
         addIncomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+//                String name = IncomeAmount.getText().toString().trim();
+//                String age = IncomeComment.getText().toString().trim();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("name", name);
+//                bundle.putString("age", age);
+//                Intent intent = new Intent(addIncome.this, accountSettings.class);
+//                intent.putExtras(bundle);
+
+
+
                 addIncomeFunction();
+                //startActivity(intent);
             }
         });
 
@@ -80,6 +94,9 @@ public class addIncome extends AppCompatActivity {
         String Income_Amount = IncomeAmount.getText().toString().trim();
         String Income_Comment = IncomeComment.getText().toString().trim();
         //Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
+
+        //income = Float.parseFloat(Income_Amount);
+
 
 
 
