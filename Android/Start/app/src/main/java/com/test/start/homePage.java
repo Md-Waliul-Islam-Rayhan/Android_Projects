@@ -29,7 +29,7 @@ public class homePage extends AppCompatActivity {
     String Mail;
     String AddIncome;
     int adIncome;
-    TextView savings, sngImg, cashValue;
+    TextView savings, sngImg, cashValue, in, ex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +49,8 @@ public class homePage extends AppCompatActivity {
         savings = findViewById(R.id.savingsValue);
         sngImg = findViewById(R.id.savingsImageId);
         cashValue = findViewById(R.id.cashValue);
+        in = findViewById(R.id.IncomeText);
+        ex = findViewById(R.id.ExpanseText);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -107,6 +109,15 @@ public class homePage extends AppCompatActivity {
             }
         });
 
+        in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                animateFab();
+                Intent intent = new Intent(homePage.this, addIncome.class);
+                startActivity(intent);
+            }
+        });
+
         expanse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,6 +126,16 @@ public class homePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                animateFab();
+                Intent intent = new Intent(homePage.this, addExpanse.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void animateFab() {
@@ -122,15 +143,23 @@ public class homePage extends AppCompatActivity {
             add.startAnimation(rotateForword);
             income.startAnimation(fabClose);
             expanse.startAnimation(fabClose);
+            in.startAnimation(fabClose);
+            ex.startAnimation(fabClose);
             income.setClickable(false);
             expanse.setClickable(false);
+            in.setClickable(false);
+            ex.setClickable(false);
             isOpen = false;
         } else {
             add.startAnimation(rotateBackword);
             income.startAnimation(fabOpen);
             expanse.startAnimation(fabOpen);
+            in.startAnimation(fabOpen);
+            ex.startAnimation(fabOpen);
             income.setClickable(true);
             expanse.setClickable(true);
+            in.setClickable(true);
+            ex.setClickable(true);
             isOpen = true;
         }
     }
@@ -156,8 +185,16 @@ public class homePage extends AppCompatActivity {
         }
 
         if (item.getItemId() == R.id.ShareMenu) {
-            Intent intent = new Intent(homePage.this, error.class);
-            startActivity(intent);
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            String subject = "CoinBank Wallet App";
+            String body = "Wallet by CoinBank Wallet is a personal finance management tools that helps you track your spending, so you stay in control and achieve your goals.";
+
+            intent.putExtra(Intent.EXTRA_SUBJECT,subject);
+            intent.putExtra(Intent.EXTRA_TEXT,body);
+            startActivity(Intent.createChooser(intent,"Share with "));
+
+
         }
 
         if (item.getItemId() == R.id.RateUsMenu) {

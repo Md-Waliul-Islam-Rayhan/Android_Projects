@@ -187,35 +187,66 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/addIncomeFloatingActionButton"
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addIncomeFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
         android:visibility="invisible"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="28dp"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/addFloatingActionButton"
+        app:layout_constraintBottom_toBottomOf="@+id/addFloatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_add_card" />
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addExpanseFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="28dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/addIncomeFloatingActionButton"
+        app:layout_constraintBottom_toTopOf="@+id/addFloatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_shopping" />
 
+    <TextView
+        android:id="@+id/IncomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="136dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Add Income"
+        android:textAllCaps="true"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/addIncomeFloatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addIncomeFloatingActionButton"
+        app:layout_constraintVertical_bias="0.382" />
 
+    <TextView
+        android:id="@+id/ExpanseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Add Expanse"
+        android:textAllCaps="true"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/addExpanseFloatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/addExpanseFloatingActionButton"
+        app:layout_constraintVertical_bias="0.441" />
 </androidx.constraintlayout.widget.ConstraintLayout>
