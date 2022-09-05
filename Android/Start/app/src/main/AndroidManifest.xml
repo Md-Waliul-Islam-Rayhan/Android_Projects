@@ -59,7 +59,7 @@
             android:name=".settings"
             android:exported="false" />
         <activity
-            android:name=".signUp"
+            android:name=".homePage"
             android:exported="false" />
         <activity
             android:name=".Spalash_Screen"
@@ -68,7 +68,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".homePage"
+            android:name=".signUp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

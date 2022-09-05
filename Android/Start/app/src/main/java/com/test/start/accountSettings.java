@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,10 +19,30 @@ public class accountSettings extends AppCompatActivity {
     FirebaseAuth mAuth;
     private Button SOButton;
 
+    /*TextView name, mail;
+    String fullName="firstName", firstName;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_settings);
+
+        /*name = findViewById(R.id.AccountNameTextView);
+        mail = findViewById(R.id.AccountEmailIdTextView);
+
+
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle!=null){
+            firstName = bundle.getString("key");
+            //String lastName = bundle.getString("lastnameKey");
+
+            //fullName = firstName+" "+lastName;
+        }
+
+        name.setText(firstName);*/
+
+
 
         mAuth = FirebaseAuth.getInstance();
 
