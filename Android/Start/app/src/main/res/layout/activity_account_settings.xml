@@ -21,9 +21,10 @@
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/AccountNameTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/roboto_bold"
         android:text="MD. WALIUL ISLAM RAYHAN"
@@ -34,16 +35,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/AccountEmailIdTextView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/roboto_regular"
         android:text="mdwaliulislamrayhan@gmail.com"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/AccountNameTextView" />
 
 
     <Button
@@ -60,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/AccountEmailIdTextView" />
 
     <Button
         android:id="@+id/AccountSettingSingOutButton"

@@ -76,6 +76,19 @@ public class addExpanse extends AppCompatActivity {
         //Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
 
 
+        if (Expanse_Amount.isEmpty()) {
+            ExpanseAmount.setError("This field is required");
+            ExpanseAmount.requestFocus();
+            return;
+        }
+
+        if (Expanse_Comment.isEmpty()) {
+            ExpanseComment.setError("This field is required");
+            ExpanseComment.requestFocus();
+            return;
+        }
+
+
         String key = databaseReference.push().getKey();
 
         AddUserDetails data = new AddUserDetails(Expanse_Value, Expanse_Amount, Expanse_Comment);

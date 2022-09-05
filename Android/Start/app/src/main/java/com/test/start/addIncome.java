@@ -81,6 +81,20 @@ public class addIncome extends AppCompatActivity {
         String Income_Comment = IncomeComment.getText().toString().trim();
         //Toast.makeText(getApplicationContext(), value+" is Selected", Toast.LENGTH_LONG).show();
 
+
+
+        if (Income_Amount.isEmpty()) {
+            IncomeAmount.setError("This field is required");
+            IncomeAmount.requestFocus();
+            return;
+        }
+
+        if (Income_Comment.isEmpty()) {
+            IncomeComment.setError("This field is required");
+            IncomeComment.requestFocus();
+            return;
+        }
+
         String key = databaseReference.push().getKey();
 
         AddUserDetails data = new AddUserDetails(Income_Type, Income_Amount, Income_Comment);
