@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.view.MenuItem;
 import android.widget.ListView;
 
@@ -68,13 +69,18 @@ public class CashHistory extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 IncomeDataList.clear();
+                Integer total = 0;
+
                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
                     AddUserDetails UserData = dataSnapshot1.getValue(AddUserDetails.class);
+
+                    Integer cost = Integer.valueOf(UserData.getAmount());
+                    total = total + cost;
+
                     IncomeDataList.add(UserData);
                 }
                 listView1.setAdapter(cashHistoryCustom_adapter);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,9 +14,18 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 public class homePage extends AppCompatActivity {
 
@@ -27,9 +37,10 @@ public class homePage extends AppCompatActivity {
     String Fname;
     String Lname;
     String Mail;
-    String AddIncome;
-    int adIncome;
+    int adIncome, sum, duplicate;
     TextView savings, sngImg, cashValue, in, ex;
+
+    DatabaseReference TotalIncome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,8 @@ public class homePage extends AppCompatActivity {
         getSupportActionBar().setTitle(R.string.Coinbank_Wallet);
         //Notification Color
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
+
+        TotalIncome = FirebaseDatabase.getInstance().getReference("Add Income User Data");
 
 
         add = findViewById(R.id.addFloatingActionButton);
@@ -61,13 +74,20 @@ public class homePage extends AppCompatActivity {
 
         }
 
+
+//        sum=duplicate+adIncome;
+
         Bundle bundle2 = getIntent().getExtras();
         if (bundle2 != null) {
-            AddIncome = bundle2.getString("IncomeAmount");
+            adIncome = bundle2.getInt("IncomeAmount");
         }
 
+//        duplicate = adIncome;
 
-        cashValue.setText(AddIncome);
+
+        //int int1 = Integer.parseInt(AddIncome);
+
+        cashValue.setText(""+adIncome);
 
         cashImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,8 +155,8 @@ public class homePage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
+
 
     private void animateFab() {
         if (isOpen) {
@@ -190,9 +210,9 @@ public class homePage extends AppCompatActivity {
             String subject = "CoinBank Wallet App";
             String body = "Wallet by CoinBank Wallet is a personal finance management tools that helps you track your spending, so you stay in control and achieve your goals.";
 
-            intent.putExtra(Intent.EXTRA_SUBJECT,subject);
-            intent.putExtra(Intent.EXTRA_TEXT,body);
-            startActivity(Intent.createChooser(intent,"Share with "));
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+            intent.putExtra(Intent.EXTRA_TEXT, body);
+            startActivity(Intent.createChooser(intent, "Share with "));
 
 
         }

@@ -7,6 +7,18 @@
     tools:context=".addIncome">
 
 
+    <TextView
+        android:id="@+id/textIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="5000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/incomeSelectCategoryImageView"
         android:layout_width="313dp"
@@ -46,7 +58,7 @@
         android:layout_height="48dp"
         android:background="@android:color/transparent"
         android:hint="Amount (in Taka)"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/incomeAmountImageView"
         app:layout_constraintEnd_toEndOf="@+id/incomeAmountImageView"
         app:layout_constraintHorizontal_bias="0.4"
@@ -69,6 +81,7 @@
         android:layout_height="48dp"
         android:background="@android:color/transparent"
         android:hint="Comment"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/commentImageView"
         app:layout_constraintEnd_toEndOf="@+id/commentImageView"
         app:layout_constraintHorizontal_bias="0.4"

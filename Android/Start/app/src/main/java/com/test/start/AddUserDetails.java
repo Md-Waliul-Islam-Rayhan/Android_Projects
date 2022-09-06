@@ -4,8 +4,7 @@ public class AddUserDetails {
 
     String Type, Amount, Comment;
 
-    public AddUserDetails()
-    {
+    public AddUserDetails() {
 
     }
 

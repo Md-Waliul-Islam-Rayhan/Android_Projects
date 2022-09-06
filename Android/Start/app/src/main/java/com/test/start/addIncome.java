@@ -6,26 +6,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class addIncome extends AppCompatActivity {
     String[] IncomeSpinner;
     private Button addIncomeButton;
     private EditText IncomeAmount, IncomeComment;
     Spinner spinner;
+    TextView t;
+    Integer int1, int2;
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +55,7 @@ public class addIncome extends AppCompatActivity {
         spinner = findViewById(R.id.AddIncomeSpinner);
         IncomeAmount = findViewById(R.id.amountTakaEditText);
         IncomeComment = findViewById(R.id.commentEditText);
+        t = findViewById(R.id.textIncome);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,IncomeSpinner);
         spinner.setAdapter(adapter);
@@ -59,8 +66,6 @@ public class addIncome extends AppCompatActivity {
                 addIncomeFunction();
             }
         });
-
-
 
     }
 
@@ -81,6 +86,8 @@ public class addIncome extends AppCompatActivity {
         String Income_Amount = IncomeAmount.getText().toString().trim();
         String Income_Comment = IncomeComment.getText().toString().trim();
 
+        //Toast.makeText(getApplicationContext(), "String"+Income_Amount, Toast.LENGTH_LONG).show();
+
         //int myNum = Integer.parseInt(IncomeAmount.getText().toString());
 
 
@@ -97,18 +104,23 @@ public class addIncome extends AppCompatActivity {
             return;
         }
 
+
+            int1 = Integer.parseInt(IncomeAmount.getText().toString());
+            //t.setText(""+int1);
+
+
         String key = databaseReference.push().getKey();
 
         AddUserDetails data = new AddUserDetails(Income_Type, Income_Amount, Income_Comment);
         databaseReference.child(key).setValue(data);
-        Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
 
 
         IncomeAmount.setText("");
         IncomeComment.setText("");
 
         Bundle bundle2 = new Bundle();
-        bundle2.putString("IncomeAmount", Income_Amount);
+        bundle2.putInt("IncomeAmount", int1);
 
         Intent intent = new Intent(addIncome.this, homePage.class);
         intent.putExtras(bundle2);
