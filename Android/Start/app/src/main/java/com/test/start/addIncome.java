@@ -55,7 +55,7 @@ public class addIncome extends AppCompatActivity {
         spinner = findViewById(R.id.AddIncomeSpinner);
         IncomeAmount = findViewById(R.id.amountTakaEditText);
         IncomeComment = findViewById(R.id.commentEditText);
-        t = findViewById(R.id.textIncome);
+        //t = findViewById(R.id.textIncome);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.sample_view,R.id.TextViewSample,IncomeSpinner);
         spinner.setAdapter(adapter);
@@ -105,7 +105,7 @@ public class addIncome extends AppCompatActivity {
         }
 
 
-            int1 = Integer.parseInt(IncomeAmount.getText().toString());
+           // int1 = Integer.parseInt(IncomeAmount.getText().toString());
             //t.setText(""+int1);
 
 
@@ -119,11 +119,11 @@ public class addIncome extends AppCompatActivity {
         IncomeAmount.setText("");
         IncomeComment.setText("");
 
-        Bundle bundle2 = new Bundle();
-        bundle2.putInt("IncomeAmount", int1);
+//        Bundle bundle2 = new Bundle();
+//        bundle2.putInt("IncomeAmount", int1);
 
         Intent intent = new Intent(addIncome.this, homePage.class);
-        intent.putExtras(bundle2);
+        //intent.putExtras(bundle2);
         startActivity(intent);
 
     }

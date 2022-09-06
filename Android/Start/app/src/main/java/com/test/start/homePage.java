@@ -37,10 +37,12 @@ public class homePage extends AppCompatActivity {
     String Fname;
     String Lname;
     String Mail;
-    int adIncome, sum, duplicate;
-    TextView savings, sngImg, cashValue, in, ex;
+    int adIncome, exIncome;
+    TextView savings, sngImg, cashValue, in, ex, expanseValue, cValue;
+    Integer totalI = 0, totalE = 0, totalCash;
 
-    DatabaseReference TotalIncome;
+
+    DatabaseReference TotalIncome, TotalExpanse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class homePage extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 
         TotalIncome = FirebaseDatabase.getInstance().getReference("Add Income User Data");
+        TotalExpanse = FirebaseDatabase.getInstance().getReference("Add Expanse User Data");
 
 
         add = findViewById(R.id.addFloatingActionButton);
@@ -59,11 +62,60 @@ public class homePage extends AppCompatActivity {
         expanse = findViewById(R.id.addExpanseFloatingActionButton);
         cashImg = findViewById(R.id.cashImage);
         expanseImg = findViewById(R.id.expanseImage);
-        savings = findViewById(R.id.savingsValue);
-        sngImg = findViewById(R.id.savingsImageId);
+        //savings = findViewById(R.id.savingsValue);
+        //sngImg = findViewById(R.id.savingsImageId);
         cashValue = findViewById(R.id.cashValue);
+        expanseValue = findViewById(R.id.expenseValue);
+        cValue = findViewById(R.id.savingsValue);
         in = findViewById(R.id.IncomeText);
         ex = findViewById(R.id.ExpanseText);
+
+
+        TotalIncome.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
+                    AddUserDetails UserData = dataSnapshot1.getValue(AddUserDetails.class);
+
+                    Integer cost1 = Integer.valueOf(UserData.getAmount());
+                    totalI = totalI + cost1;
+                }
+                cashValue.setText("" + totalI);
+
+                totalCash = totalI - totalE;
+                cValue.setText("" + totalCash);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+        TotalExpanse.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
+                    AddUserDetails UserData = dataSnapshot1.getValue(AddUserDetails.class);
+
+                    Integer cost2 = Integer.valueOf(UserData.getAmount());
+                    totalE = totalE + cost2;
+                }
+                expanseValue.setText("" + totalE);
+
+                totalCash = totalI - totalE;
+                cValue.setText("" + totalCash);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+//
+//        totalCash = totalI - totalE;
+//        cValue.setText("" + totalCash);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -71,23 +123,23 @@ public class homePage extends AppCompatActivity {
             Fname = bundle.getString("Fname");
             Lname = bundle.getString("Lname");
             Mail = bundle.getString("mail");
-
         }
 
 
-//        sum=duplicate+adIncome;
+//        Bundle bundle2 = getIntent().getExtras();
+//        if (bundle2 != null) {
+//            adIncome = bundle2.getInt("IncomeAmount");
+//        }
+//        cashValue.setText(""+adIncome);
+//
+//
+//
+//        Bundle bundle3 = getIntent().getExtras();
+//        if (bundle3 != null) {
+//            exIncome = bundle3.getInt("ExpanseAmount");
+//        }
+//        expanseValue.setText(""+exIncome);
 
-        Bundle bundle2 = getIntent().getExtras();
-        if (bundle2 != null) {
-            adIncome = bundle2.getInt("IncomeAmount");
-        }
-
-//        duplicate = adIncome;
-
-
-        //int int1 = Integer.parseInt(AddIncome);
-
-        cashValue.setText(""+adIncome);
 
         cashImg.setOnClickListener(new View.OnClickListener() {
             @Override

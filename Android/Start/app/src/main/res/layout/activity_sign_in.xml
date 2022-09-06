@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/singnin"
     tools:context=".signIn">
 
 
@@ -25,7 +25,7 @@
         android:layout_width="300dp"
         android:layout_height="71dp"
         android:layout_marginTop="28dp"
-        android:src="@drawable/field"
+        android:src="@drawable/ic_boxbg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:layout_width="298dp"
         android:layout_height="65dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/field"
+        android:src="@drawable/ic_boxbg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,9 +73,10 @@
 
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="122dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="124dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/custom_button_iii"
         android:backgroundTint="#1C3879"
         android:text="SIGN IN"
         android:textColor="@color/offWhiteColor"

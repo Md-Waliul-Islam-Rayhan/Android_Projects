@@ -11,6 +11,17 @@
 
         >
 
+        <TextView
+            android:id="@+id/DateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Date: 07 September 2022"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            />
+
 
         <TextView
             android:id="@+id/TypeSampleTextView"
@@ -19,7 +30,6 @@
             android:text="IcomeType: "
             android:fontFamily="@font/roboto_bold"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="8dp"
             android:textSize="20sp"
 
             />

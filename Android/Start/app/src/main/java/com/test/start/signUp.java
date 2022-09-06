@@ -79,7 +79,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener {
 
         SignUpUserSaveData data = new SignUpUserSaveData(firstName, lastName, email, password);
         databaseReference.child(key).setValue(data);
-        Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "User data saved Successfully", Toast.LENGTH_LONG).show();
 
     }
 

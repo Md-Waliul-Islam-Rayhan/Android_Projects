@@ -70,6 +70,7 @@
         android:layout_height="48dp"
         android:background="@android:color/transparent"
         android:hint="Comment"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/commentImageView"
         app:layout_constraintEnd_toEndOf="@+id/commentImageView"
         app:layout_constraintHorizontal_bias="0.4"

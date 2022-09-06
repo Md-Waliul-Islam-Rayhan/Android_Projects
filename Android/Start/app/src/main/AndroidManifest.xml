@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Start"
         tools:targetApi="31">
         <activity
+            android:name=".FirstScreen"
+            android:exported="false" />
+        <activity
             android:name=".settings_about"
             android:exported="false" />
         <activity

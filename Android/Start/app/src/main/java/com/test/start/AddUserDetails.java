@@ -8,9 +8,9 @@ public class AddUserDetails {
 
     }
 
-    public AddUserDetails(String Type, String Amount, String Comment) {
+    public AddUserDetails(String Type, String amount, String Comment) {
         this.Type = Type;
-        this.Amount = Amount;
+        this.Amount = amount;
         this.Comment = Comment;
     }
 

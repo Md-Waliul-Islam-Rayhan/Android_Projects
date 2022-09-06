@@ -3,6 +3,7 @@ package com.test.start;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -24,6 +25,8 @@ public class addExpanse extends AppCompatActivity {
     Spinner spinner;
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
+    Integer int2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,9 @@ public class addExpanse extends AppCompatActivity {
         }
 
 
+      //  int2 = Integer.parseInt(ExpanseAmount.getText().toString());
+
+
         String key = databaseReference.push().getKey();
 
         AddUserDetails data = new AddUserDetails(Expanse_Value, Expanse_Amount, Expanse_Comment);
@@ -98,5 +104,14 @@ public class addExpanse extends AppCompatActivity {
 
         ExpanseAmount.setText("");
         ExpanseComment.setText("");
+
+
+//
+//        Bundle bundle3 = new Bundle();
+//        bundle3.putInt("ExpanseAmount", int2);
+
+        Intent intent = new Intent(addExpanse.this, homePage.class);
+       // intent.putExtras(bundle3);
+        startActivity(intent);
     }
 }

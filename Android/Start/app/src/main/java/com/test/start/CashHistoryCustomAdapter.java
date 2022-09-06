@@ -36,10 +36,13 @@ public class CashHistoryCustomAdapter extends ArrayAdapter<AddUserDetails> {
         TextView CashIncomeType = view1.findViewById(R.id.TypeSampleTextView);
         TextView CashIncomeAmount = view1.findViewById(R.id.AmountSampleTextView);
         TextView CashIncomeComment = view1.findViewById(R.id.CommentSampleTextView);
+        TextView Date = view1.findViewById(R.id.DateView);
+
 
         CashIncomeType.setText("Income Type: "+CashIncomeHistoryData.getType());
         CashIncomeAmount.setText("Amount: "+CashIncomeHistoryData.getAmount());
         CashIncomeComment.setText("Comment: "+CashIncomeHistoryData.getComment());
+        Date.setText("Date: 07 September 2022");
 
         return view1;
     }

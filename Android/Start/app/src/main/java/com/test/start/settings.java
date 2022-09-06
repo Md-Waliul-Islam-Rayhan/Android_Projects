@@ -54,6 +54,24 @@ public class settings extends AppCompatActivity {
             }
         });
 
+        noti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(settings.this, error.class);
+                startActivity(intent);
+            }
+        });
+
+        privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(settings.this, error.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

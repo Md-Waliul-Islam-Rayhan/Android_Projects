@@ -14,8 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,10 @@ public class accountSettings extends AppCompatActivity {
     String Fname, LName, FullName, Mail;
     TextView name, mail;
 
+    Button pvt;
+
+    DatabaseReference FIRSTNAME, LASTNAME;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +41,7 @@ public class accountSettings extends AppCompatActivity {
 
         name = findViewById(R.id.AccountNameTextView);
         mail = findViewById(R.id.AccountEmailIdTextView);
+        pvt = findViewById(R.id.AccountNameButton);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
@@ -46,7 +54,6 @@ public class accountSettings extends AppCompatActivity {
             name.setText(FullName);
             mail.setText(Mail);
         }
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -67,6 +74,14 @@ public class accountSettings extends AppCompatActivity {
                 Intent intent = new Intent(accountSettings.this, signIn.class);
                 startActivity(intent);
                 Toast.makeText(getApplicationContext(), "Sign out is Successful", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        pvt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(accountSettings.this, error.class);
+                startActivity(intent);
             }
         });
 
