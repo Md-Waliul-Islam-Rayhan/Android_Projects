@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Start"
         tools:targetApi="31">
         <activity
-            android:name=".FirstScreen"
+            android:name=".homePage"
             android:exported="false" />
         <activity
             android:name=".settings_about"
@@ -74,7 +74,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".homePage"
+            android:name=".FirstScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
