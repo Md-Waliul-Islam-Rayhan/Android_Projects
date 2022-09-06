@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".HelpMenuBar">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="এই এপস টা হচ্ছে কয়েন ব্যাংক ওয়ালেট। \nএখানে আপনি আপনার প্রতিদিনের যাবতীয় খরচ ও ব্যয় এর হিসেব রাখতে পারবেন।"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="153dp"
-        tools:ignore="MissingConstraints" />
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        tools:context=".HelpMenuBar">
 
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="370dp"
+            android:src="@drawable/helpsignin" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. This Sign In page. You can simply Sign In here with your email address and your desired password." />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="370dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/helpsignup" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. If you are not already a user, then you can create a account here with your name, email address and password." />
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

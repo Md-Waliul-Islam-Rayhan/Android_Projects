@@ -3,6 +3,7 @@ package com.test.start;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +29,9 @@ public class addExpanse extends AppCompatActivity {
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
     Integer int2;
+    TextView datu;
+    DatePickerDialog datePickerDialog;
+    String montth;
 
 
     @Override
@@ -50,6 +56,92 @@ public class addExpanse extends AppCompatActivity {
         spinner = findViewById(R.id.AddExpanseSpinner);
         ExpanseAmount = findViewById(R.id.ExpanseAmountTakaEditText);
         ExpanseComment = findViewById(R.id.ExpanseCommentEditText);
+        datu = findViewById(R.id.DateID20);
+
+        datu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                DatePicker datePicker = new DatePicker(addExpanse.this);
+                int currentDay = datePicker.getDayOfMonth();
+                int currentMonth = datePicker.getMonth()+1;
+                int currentYear = datePicker.getYear();
+
+                datePickerDialog = new DatePickerDialog(addExpanse.this,
+
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+
+                                if(i1==0)
+                                {
+                                    montth = "January";
+                                }
+
+                                if(i1==1)
+                                {
+                                    montth = "February";
+                                }
+
+                                if(i1==2)
+                                {
+                                    montth = "March";
+                                }
+
+                                if(i1==3)
+                                {
+                                    montth = "April";
+                                }
+
+                                if(i1==4)
+                                {
+                                    montth = "May";
+                                }
+
+                                if(i1==5)
+                                {
+                                    montth = "June";
+                                }
+
+                                if(i1==6)
+                                {
+                                    montth = "July";
+                                }
+
+                                if(i1==7)
+                                {
+                                    montth = "August";
+                                }
+
+                                if(i1==8)
+                                {
+                                    montth = "September";
+                                }
+
+                                if(i1==9)
+                                {
+                                    montth = "October";
+                                }
+
+                                if(i1==10)
+                                {
+                                    montth = "November";
+                                }
+
+                                if(i1==11)
+                                {
+                                    montth = "December";
+                                }
+
+                                datu.setText(i2+" "+montth+" "+i);
+                            }
+                        }, currentYear, currentMonth, currentDay);
+
+                datePickerDialog.show();
+            }
+        });
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.sample_view, R.id.TextViewSample, ExpanseSpinner);
         spinner.setAdapter(adapter);
