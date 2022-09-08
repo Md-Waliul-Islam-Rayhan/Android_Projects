@@ -30,7 +30,7 @@ public class CashHistory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cash_history);
 
-        getSupportActionBar().setTitle("Cash History");
+        getSupportActionBar().setTitle("Income History");
         //Notification Color
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 

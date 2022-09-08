@@ -35,7 +35,7 @@ public class FirstScreen extends AppCompatActivity {
 
     private void dowork() {
          try {
-                Thread.sleep(3000);
+                Thread.sleep(1500);
             } catch (Exception e) {
                 Toast.makeText(getApplicationContext(), "Exception " + e, Toast.LENGTH_LONG).show();
             }

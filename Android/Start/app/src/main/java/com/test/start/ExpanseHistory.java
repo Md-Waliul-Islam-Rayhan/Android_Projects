@@ -30,7 +30,7 @@ public class ExpanseHistory extends AppCompatActivity {
         setContentView(R.layout.activity_expanse_history);
 
 
-        getSupportActionBar().setTitle("Expanse History");
+        getSupportActionBar().setTitle("Expense History");
         //Notification Color
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.TitleBarColor)));
 

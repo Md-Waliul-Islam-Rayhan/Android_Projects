@@ -66,11 +66,23 @@
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/activity_test_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/history_sample_view.xml" value="0.34395848776871757" />
         <entry key="..\:/GitDesktop/Android/Android/Start/app/src/main/res/layout/sample_view.xml" value="0.365625" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/drawable/ic_accountlogo.xml" value="0.145" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/drawable/ic_arrow.xml" value="0.145" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.145" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/drawable/ic_cashbg.xml" value="0.145" />
         <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_account_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_add_expanse.xml" value="0.25416666666666665" />
-        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_add_income.xml" value="0.536" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_add_income.xml" value="0.22592592592592592" />
         <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_cash_history.xml" value="0.25416666666666665" />
-        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_help_menu_bar.xml" value="0.22592592592592592" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_first_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_help_menu_bar.xml" value="0.25390218522372526" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_home_page.xml" value="0.22592592592592592" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_settings.xml" value="0.22592592592592592" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_sign_in.xml" value="0.22592592592592592" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_sign_up.xml" value="0.22592592592592592" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_spalash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_spalash_screen2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Git_Desktop/Android_Projects/Android/Start/app/src/main/res/layout/activity_spalash_screen3.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

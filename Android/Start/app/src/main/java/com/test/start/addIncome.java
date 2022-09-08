@@ -30,8 +30,6 @@ public class addIncome extends AppCompatActivity {
     private Button addIncomeButton;
     private EditText IncomeAmount, IncomeComment;
     Spinner spinner;
-    TextView t;
-    Integer int1, int2;
     private FirebaseAuth mAuth;
     DatabaseReference databaseReference;
     DatePickerDialog datePickerDialog;
@@ -141,7 +139,7 @@ public class addIncome extends AppCompatActivity {
 
                                 date.setText(i2+" "+montth+" "+i);
                             }
-                        }, currentYear, currentMonth, currentDay);
+                        }, currentYear, (currentMonth-1), currentDay);
 
                 datePickerDialog.show();
             }

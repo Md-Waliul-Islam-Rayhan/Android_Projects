@@ -135,7 +135,7 @@ public class addExpanse extends AppCompatActivity {
 
                                 datu.setText(i2+" "+montth+" "+i);
                             }
-                        }, currentYear, currentMonth, currentDay);
+                        }, currentYear, (currentMonth-1), currentDay);
 
                 datePickerDialog.show();
             }
