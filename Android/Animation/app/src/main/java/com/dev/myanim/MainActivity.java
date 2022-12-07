@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         bt4=findViewById(R.id.button4);
 
         Animation move = AnimationUtils.loadAnimation(this, R.anim.move);
+        Animation alpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Animation scale = AnimationUtils.loadAnimation(this, R.anim.scale);
+        Animation rotate = AnimationUtils.loadAnimation(this, R.anim.rotate);
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,5 +37,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hello.startAnimation(alpha);
+            }
+        });
+
+        bt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hello.startAnimation(scale);
+            }
+        });
+
+        bt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hello.startAnimation(rotate);
+            }
+        });
     }
 }
