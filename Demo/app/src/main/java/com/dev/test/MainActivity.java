@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-main.setBackgroundColor(getResources().getColor(R.color.purple_200));
+                main.setBackgroundColor(getResources().getColor(R.color.purple_200));
             }
         });
 
