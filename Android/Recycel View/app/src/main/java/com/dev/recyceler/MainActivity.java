@@ -120,9 +120,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add(new contract_sample_java_model(R.drawable.k,"Mim", "897461056841"));
         arrayList.add(new contract_sample_java_model(R.drawable.l,"Love", "8974156565"));
         arrayList.add(new contract_sample_java_model(R.drawable.m,"Test", "86746156616"));
-
-        //hgfhf;
-
+        
         recycleViewerAdapter = new RecycleViewerAdapter(this, arrayList);
         recyclerView.setAdapter(recycleViewerAdapter);
     }
