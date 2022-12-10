@@ -9,12 +9,15 @@
         <menu>
 
             <item android:title="Hello"
+                android:id="@+id/l1"
                 android:icon="@drawable/ic_baseline_add_comment_24"/>
 
             <item android:title="Hello"
+                android:id="@+id/l2"
                 android:icon="@drawable/ic_baseline_add_comment_24"/>
 
             <item android:title="Hello"
+                android:id="@+id/l3"
                 android:icon="@drawable/ic_baseline_add_comment_24"/>
 
             <item android:title="Hello"
