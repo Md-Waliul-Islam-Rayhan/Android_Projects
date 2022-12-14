@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="actionbar_title">Highway Next</string>
+
+    <string name="app_name">Highway Next</string>
+
+    <string name="phoneNumber">Phone Number</string>
+
+    <string name="password">PIN</string>
+
+    <string name="summation">Summation</string>
+
+    <string name="multiplication">Multiplication</string>
+
+    <string name="editText1Hint">First Number</string>
+
+    <string name="editText2Hint">Second Number</string>
+
+    <string name="heading">Login System</string>
+
+    <string name="slogan">Success is a journey, not a destination</string>
+
+    <string name="login">Login</string>
+
+    <string name="logout">Logout</string>
+
+    <string name="loginButtonClickedText">Login button is clicked.</string>
+
+    <string name="logoutButtonClickedText">Logout button is clicked.</string>
+
+    <string name="counterResetToast">Counter has been reset</string></resources>
