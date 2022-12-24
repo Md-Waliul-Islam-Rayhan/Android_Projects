@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+<!--        Lottie Animation-->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationPostbox"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/postbox_animation"
+            app:layout_constraintBottom_toTopOf="@id/appNameInHomeView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/appNameInHomeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/banglafont_bold"
+            android:paddingTop="20dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/teal_700"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toTopOf="@id/appSloganInHomeView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottieAnimationPostbox">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/appSloganInHomeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/banglafont_regular"
+            android:text="@string/app_slogan"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/ash"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/adminButtonToActivity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appNameInHomeView">
+
+        </com.google.android.material.textview.MaterialTextView>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/adminButtonToActivity"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="6dp"
+                android:height="100dp"
+                android:fontFamily="@font/banglafont_bold"
+                android:text="@string/adminLoginActivityButton"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:backgroundTint="@color/teal_700"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_round_admin_panel_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@id/userButtonToActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appSloganInHomeView"
+                app:rippleColor="@color/teal_900"
+                app:strokeColor="@color/teal_700" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/userButtonToActivity"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="6dp"
+                android:height="100dp"
+                android:fontFamily="@font/banglafont_bold"
+                android:text="@string/userLoginActivityButton"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:backgroundTint="@color/teal_700"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_round_account_circle_24"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="30dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="@id/phonebookButtonToActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/adminButtonToActivity"
+                app:rippleColor="@color/teal_900"
+                app:strokeColor="@color/teal_700" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/phonebookButtonToActivity"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="24dp"
+                android:height="100dp"
+                android:fontFamily="@font/banglafont_bold"
+                android:text="@string/phoneBookActivityButton"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                app:backgroundTint="@color/teal_700"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_round_contacts_24"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="25dp"
+                app:iconTint="#FFFFFF"
+                app:layout_constraintBottom_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userButtonToActivity"
+                app:rippleColor="@color/teal_900"
+                app:strokeColor="@color/teal_700" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

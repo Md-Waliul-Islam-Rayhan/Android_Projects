@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ই-ডেস্ক</string>
+    <string name="app_slogan">এক প্ল্যাটফর্মে সকল সমাধান</string>
+    <string name="adminLoginActivityButton">এডমিন</string>
+    <string name="userLoginActivityButton">ইউজার</string>
+    <string name="phoneBookActivityButton">ফোন বুক</string>
+    <string name="addressBookActivityButton">এড্রেস বুক</string>
+</resources>
